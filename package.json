@@ -1,0 +1,21 @@
+{
+  "name": "section-overlap",
+  "version": "1.0.0",
+  "description": "function to verify number section is overlap",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "overlap",
+    "section"
+  ],
+  "author": "Sergiy Bosatskiy <sergiybosatskiy@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "@types/jest": "^25.1.3"
+  }
+}
