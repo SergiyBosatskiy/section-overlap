@@ -1,5 +1,6 @@
 function sectionOverlap (arr, min, max) {
     let result = true;
+    if (max < min) return false;
     const cloneIntervals = [...arr];
     cloneIntervals.push({ min, max });
     cloneIntervals.forEach(a => {

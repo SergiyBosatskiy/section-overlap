@@ -72,5 +72,44 @@ describe('Section Overlap', () => {
         overlap(clone, 0, 4);
         overlap(clone, 200, 300);
         expect(clone).toEqual(data);
-    })
-})
+    });
+
+    test('max more min', () => {
+        expect(overlap(data, 2, 0)).toBe(false);
+        expect(overlap(data, 3, 0)).toBe(false);
+        expect(overlap(data, 4, 3)).toBe(false);
+        expect(overlap(data, 6, 3)).toBe(false);
+        expect(overlap(data, 6, 6)).toBe(false);
+        expect(overlap(data, 14, 6)).toBe(false);
+        expect(overlap(data, 24, 17)).toBe(false);
+        expect(overlap(data, 25, 17)).toBe(false);
+        expect(overlap(data, 30, 17)).toBe(false);
+        expect(overlap(data, 200, 100)).toBe(false);
+        expect(overlap(data, 100, 100)).toBe(false);
+        expect(overlap(data, 150, 100)).toBe(false);
+        expect(overlap(data, 150, 27)).toBe(false);
+        expect(overlap(data, 27, 27)).toBe(false);
+        expect(overlap(data, 28, 27)).toBe(false);
+        expect(overlap(data, 81, 80)).toBe(false);
+        expect(overlap(data, 90, 80)).toBe(false);
+        expect(overlap(data, 27, 26)).toBe(false);
+        expect(overlap(data, 400, 400)).toBe(false);
+        expect(overlap(data, 401, 400)).toBe(false);
+        expect(overlap(data, 481, 410)).toBe(false);
+        expect(overlap(data, 471, 450)).toBe(false);
+        expect(overlap(data, 30, 29)).toBe(false);
+        expect(overlap(data, 500, 29)).toBe(false);
+        expect(overlap(data, 400, 60)).toBe(false);
+        expect(overlap(data, 70, 60)).toBe(false);
+        expect(overlap(data, 29, 28)).toBe(false);
+        expect(overlap(data, 28, 28)).toBe(true);
+        expect(overlap(data, 36, 36)).toBe(true);
+        expect(overlap(data, 99, 96)).toBe(false);
+        expect(overlap(data, 9999, 2001)).toBe(false);
+        expect(overlap(data, 79, 77)).toBe(false);
+        expect(overlap(data, 78, 77)).toBe(false);
+        expect(overlap(data, 29, 29)).toBe(true);
+        expect(overlap(data, 999, 501)).toBe(false);
+        expect(overlap(data, 270, 250)).toBe(false);
+    });
+});
